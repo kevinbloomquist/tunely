@@ -40,7 +40,7 @@ sampleAlbums.push({
 $(document).ready(function() {
   console.log('app.js loaded!');
 // for (i=0;i<sampleAlbums.length;i++){
-  sampleAlbums.forEach(function(album) {
+  renderAlbums.forEach(function(album) {
     renderAlbum(album);
   }
 );

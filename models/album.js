@@ -3,7 +3,6 @@ var Schema = mongoose.Schema;
 
 
 var AlbumSchema = new Schema({
-"id":String,
 "artistName": String,
 "name": String,
 "releaseDate": String,
