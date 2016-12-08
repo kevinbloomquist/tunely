@@ -1,4 +1,5 @@
 // SERVER-SIDE JAVASCRIPT
+// require models*
 var db = require("./models");
 //require express in our app
 var express = require('express');
@@ -76,7 +77,7 @@ app.get('/api', function api_index (req, res){
 app.get('/api/albums', function album_index(req, res){
   db.Album.find({},function(err,albums){
 
-
+var yeezyList=albums;
 res.json(albums);
 });
 });
