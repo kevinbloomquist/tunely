@@ -74,10 +74,10 @@ app.get('/api', function api_index (req, res){
 });
 
 app.get('/api/albums', function album_index(req, res){
-  db.Albums.find({},function(err,albums){
+  db.Album.find({},function(err,albums){
 
 
-res.json(album);
+res.json(albums);
 });
 });
 
