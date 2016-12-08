@@ -1,5 +1,5 @@
 // SERVER-SIDE JAVASCRIPT
-
+var db = require("./models");
 //require express in our app
 var express = require('express');
 // generate a new express app and call it 'app'
@@ -74,7 +74,10 @@ app.get('/api', function api_index (req, res){
 });
 
 app.get('/api/albums', function album_index(req, res){
-var renderAlbums = res.json(albums);
+  db.Albums.find({},functin(err,albums){
+
+res.json(album);
+  
 });
 
 /**********
