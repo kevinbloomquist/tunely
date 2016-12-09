@@ -78,8 +78,12 @@ app.get('/api/albums', function album_index(req, res){
   db.Album.find({},function(err,albums){
 
 var yeezyList=albums;
-res.json(albums);
+    res.json(albums);
+  });
 });
+
+app.post('/api/albums',function album_post(req,res){
+console.log("SUP!");
 });
 
 

@@ -34,6 +34,8 @@
 //            });
 /* end of hard-coded data */
 
+
+// MOVED TO INSIDE $(document).ready...
 // $.get('http://localhost:3000/api/albums',function(res,req){
 
 // var yeezyList = res;
@@ -58,6 +60,15 @@ console.log(yeezyList);
 });
 });
 
+// $('#form-horizontal').submit(function(event){
+//   event.preventDefault();
+//   var newAlbum = $(this).serialize();
+//   $(this).trigger("reset");
+//   console.log(newAlbum);
+// });
+
+
+
 
 
 
@@ -69,7 +80,7 @@ function renderAlbum(album) {
 
   var albumHtml =
   "        <!-- one album -->" +
-  "        <div class='row album' data-album-id='" + "HARDCODED ALBUM ID" + "'>" +
+  "        <div class='row album' data-album-id='" + album._id + "'>" +
   "          <div class='col-md-10 col-md-offset-1'>" +
   "            <div class='panel panel-default'>" +
   "              <div class='panel-body'>" +
@@ -82,7 +93,7 @@ function renderAlbum(album) {
   "                    <ul class='list-group'>" +
   "                      <li class='list-group-item'>" +
   "                        <h4 class='inline-header'>Album Name:</h4>" +
-  "                        <span class='album-name'>" + "HARDCODED ALBUM NAME" + "</span>" +
+  "                        <span class='album-name'>" + album.name + "</span>" +
   "                      </li>" +
   "                      <li class='list-group-item'>" +
   "                        <h4 class='inline-header'>Artist Name:</h4>" +
