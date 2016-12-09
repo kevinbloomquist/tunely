@@ -33,26 +33,30 @@
 //              genres: [ 'piano' ]
 //            });
 /* end of hard-coded data */
-var yeezyList;
-$.get('http://localhost:3000/api/albums',function(res,req){
 
-var yeezyList = res;
-console.log(yeezyList);
-return yeezyList;
+// $.get('http://localhost:3000/api/albums',function(res,req){
 
-});
+// var yeezyList = res;
+// console.log(yeezyList);
+// return yeezyList;
+
+// });
 
 $(document).ready(function() {
   console.log('app.js loaded!');
+  $.get('http://localhost:3000/api/albums',function(res,req){
+
+var yeezyList = res;
+console.log(yeezyList);
+
 // for (i=0;i<sampleAlbums.length;i++){
-  yeezyList.forEach(function(album) {
+  res.forEach(function(album) {
     renderAlbum(album);
-  }
-);
 
 
+  });
 });
-
+});
 
 
 
