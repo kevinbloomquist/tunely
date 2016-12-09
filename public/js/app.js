@@ -60,12 +60,18 @@ console.log(yeezyList);
 });
 });
 
-// $('#form-horizontal').submit(function(event){
-//   event.preventDefault();
-//   var newAlbum = $(this).serialize();
-//   $(this).trigger("reset");
-//   console.log(newAlbum);
-// });
+$('#album-form form').submit(function(event){
+  event.preventDefault();
+  var newAlbum = $(this).serialize();
+  // working here soo close (inspect!!!)
+  $.post('/api/albums',newAlbum, function(res){
+    renderAlbum(res);
+  });
+  // end work***
+  $(this).trigger("reset");
+
+  console.log(newAlbum);
+});
 
 
 

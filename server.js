@@ -5,6 +5,9 @@ var db = require("./models");
 var express = require('express');
 // generate a new express app and call it 'app'
 var app = express();
+// require body-parser
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
@@ -83,7 +86,10 @@ var yeezyList=albums;
 });
 
 app.post('/api/albums',function album_post(req,res){
-console.log("SUP!");
+console.log("APP.POST!");
+newAlbumIn = db.Album.create(req.body);
+console.log(newAlbumIn);
+res.json(newAlbumIn);
 });
 
 
