@@ -84,12 +84,12 @@ var yeezyList=albums;
     res.json(albums);
   });
 });
-
+var passAlbum;
 app.post('/api/albums',function album_post(req,res){
 console.log("APP.POST!");
 newAlbumIn = db.Album.create(req.body);
 console.log(newAlbumIn);
-res.json(newAlbumIn);
+passAlbum = res.json(newAlbumIn);
 });
 
 

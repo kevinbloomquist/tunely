@@ -58,24 +58,30 @@ console.log(yeezyList);
 
   });
 });
-});
+
 
 $('#album-form form').submit(function(event){
   event.preventDefault();
   var newAlbum = $(this).serialize();
   // working here soo close (inspect!!!)
   $.post('/api/albums',newAlbum, function(res){
-    renderAlbum(res);
+    renderAlbum(passAlbum);
+    console.log(res);
+    deserialize(newAlbum);
+
+    renderAlbum(albumIn);
+    console.log(albumIn);
   });
-  // end work***
-  $(this).trigger("reset");
+  // end work***git 
+  // $(this).trigger("reset");
 
   console.log(newAlbum);
 });
+renderAlbum(newAlbum);
 
 
 
-
+});
 
 
 // this function takes a single album and renders it to the page
@@ -126,6 +132,7 @@ function renderAlbum(album) {
   // render to the page with jQuery
 $('#albums').append(albumHtml);
 }
+
 
 
 
