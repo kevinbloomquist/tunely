@@ -65,19 +65,16 @@ $('#album-form form').submit(function(event){
   var newAlbum = $(this).serialize();
   // working here soo close (inspect!!!)
   $.post('/api/albums',newAlbum, function(res){
-    renderAlbum(passAlbum);
     console.log(res);
-    deserialize(newAlbum);
+  
 
-    renderAlbum(albumIn);
+    renderAlbum(res);
     console.log(albumIn);
   });
   // end work***git 
   // $(this).trigger("reset");
-
-  console.log(newAlbum);
 });
-renderAlbum(newAlbum);
+
 
 
 

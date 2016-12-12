@@ -87,10 +87,11 @@ var yeezyList=albums;
 var passAlbum;
 app.post('/api/albums',function album_post(req,res){
 console.log("APP.POST!");
-newAlbumIn = db.Album.create(req.body);
-console.log(newAlbumIn);
-passAlbum = res.json(newAlbumIn);
+db.Album.create(req.body,function(err,newAlbumIn){
+
+res.json(newAlbumIn);
 });
+});//put function in.create()!
 
 
 /**********
